@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    }
+           
+    img {
+        width: 360px;
+        height: 240px;
+      }
+      
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center; 
+        min-height: 100vh; 
+        background-color: rgb(241, 221, 36);
+        
+      }
+      
+      #gallery {
+        display: flex;
+        width: 1200px;
+        grid-gap: 30px; 
+        list-style-type:none;
+        
+      }
+      
+      
+
+      
