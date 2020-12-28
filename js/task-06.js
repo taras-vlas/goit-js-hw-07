@@ -25,23 +25,60 @@
 } */
 
 
-const inputRef = document.getElementById("validation-input");
+ /* Варіант 3 */
+const inputRef = document.querySelector("#validation-input");// визов селектора йде по -"#validation-input", по id # - значення елем.
+      // const validLength = Number(inputRef.dataset.length);
 const validLength = Number(inputRef.getAttribute("data-length"));
-        //alert(typeof validLength);
 
-inputRef.oninput = function() {
-        //alert(typeof inputRef.value.length);
-  
-  if (inputRef.value.length !== "") {
-    inputRef.classList.add("invalid");
-    } 
-  if (inputRef.value.length === validLength) {
-    inputRef.classList.remove("invalid");
-    inputRef.classList.add("valid");
-    } 
-  if (inputRef.value.length <= 0) {
-     inputRef.classList.remove("invalid");; 
-     inputRef.classList.remove("valid");
-     }
-  return;
-};
+inputRef.oninput = function (event) {
+  inputRef.classList.remove('invalid');
+  inputRef.classList.remove('valid');
+
+  if (this.value.length === validLength) {
+        inputRef.classList.add('valid');
+    
+ } else if (this.value.length > 0  && this.value.length !== validLength) {
+          inputRef.classList.add('invalid');
+  }
+}
+
+ /* Варіант 2 */
+//const inputRef = document.querySelector("#validation-input");// визов селектора йде по -"#validation-input", по id # - значення елем.
+//      // const validLength = Number(inputRef.dataset.length);
+//const validLength = Number(inputRef.getAttribute("data-length"));
+// inputRef.oninput = function (event) {
+//       //alert(typeof validLength);
+//       //(Number(event.target.value) === 0) 
+ 
+//   if (this.value.length === validLength) {
+//     inputRef.classList.remove('invalid');
+//     inputRef.classList.add('valid');
+//   } else if (this.value.length === 0) {
+//     inputRef.classList.remove('invalid');
+//     inputRef.classList.remove('valid');
+//     } else {
+//     inputRef.classList.remove('valid');
+//     inputRef.classList.add('invalid');
+//   } 
+// }
+
+ /* Варіант 1 */
+// const inputRef = document.getElementById("validation-input");
+// const validLength = Number(inputRef.getAttribute("data-length"));
+//         alert(typeof validLength);
+
+// inputRef.oninput = function() {
+//         alert(typeof inputRef.value.length);
+  // if (inputRef.value.length !== "") {
+  //   inputRef.classList.add("invalid");
+  // if (inputRef.value.length === validLength) {
+  //   inputRef.classList.remove("invalid");
+  //   inputRef.classList.add("valid");
+  //   } 
+  // if (inputRef.value.length <= 0) {
+  //    inputRef.classList.remove("invalid");; 
+  //    inputRef.classList.remove("valid");
+  //    }
+// };
+        
+

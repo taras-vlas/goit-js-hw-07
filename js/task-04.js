@@ -22,13 +22,15 @@ const buttonRef = {
 const decrement = () => {
   counterValue -= 1;
 
-  buttonRef.span.textContent = counterValue;  
+  buttonRef.span.textContent = counterValue;  //дає ссилку на елемент по його ідентификатору (строка - ID); 
 };
 
 const increment = () => {
   counterValue += 1;
 
-  document.getElementById('value').textContent = counterValue;//дає ссилку на елемент по його ідентификатору (строка - ID); 
+  //document.getElementById('value').textContent = counterValue;//використано:инструкцию обращения к ДОМ дереву document.getElementById('value')!
+  /*Внутри функции increment используем переменную в которой раннее сохранили ссылку на элемент ДОМ дерева*/
+  buttonRef.span.textContent = counterValue;
 };
 
 buttonRef.subtraction.addEventListener("click", decrement);
